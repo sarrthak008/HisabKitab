@@ -1,0 +1,19 @@
+{
+  "name": "khatabook",
+  "version": "1.0.0",
+  "description": "this is simple khata book project based on file system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "KhataBook"
+  },
+  "author": "Sarthak",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
