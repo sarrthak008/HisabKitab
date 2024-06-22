@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname,"public")))
          if(err){
             res.send(err);
          }else{
-            console.log(files)
+           // console.log(files)
             res.render("index",{files:files})
          }
      })
@@ -28,17 +28,21 @@ app.use(express.static(path.join(__dirname,"public")))
 
 app.post('/createhisab',(req,res)=>{
 
-    const  GetFileName=()=>{
+    const   GetFileName=()=>{
         const date = new Date();
         let year = date.getFullYear()
         let  month = date.getMonth()
         let day = date.getDate()
+           //readfile star
        return(`${year}-${month+1}-${day}`);
      }
-     const filenName = GetFileName();
-     let { tittle , content} = req.body;
 
-     fs.writeFile(`./hisabs/${filenName}.txt`,`${content}`,(err)=>{
+     let fileName = GetFileName();
+     let { tittle , content} = req.body;      
+
+     
+
+     fs.writeFile(`./hisabs/${fileName}.txt`,`${content}`,(err)=>{
          if(err){
             res.send(err);
          }else{
@@ -47,7 +51,6 @@ app.post('/createhisab',(req,res)=>{
      })
 
 })
-
 
 app.get('/delete/:filename',(req,res)=>{
     
@@ -67,10 +70,13 @@ app.get('/showhisab/:fileName',(req,res)=>{
             res.send(err);
           }else{
             res.render("hisab",{data,fileName});
-            console.log(data);
+        
           }
     })
-     
+})
+
+app.get('/edit/:fileName',(_req,res)=>{
+     res.render("edit")
 })
 
  app.listen(PORT,()=>{
