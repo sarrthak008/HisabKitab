@@ -61,6 +61,7 @@ a{
     border-radius: 4px;
     padding: 0 1vw;
     align-items: center;
+    margin-top: 4vh;
     justify-content: space-between;
     background-color: rgb(81, 81, 234);
 }
@@ -77,4 +78,10 @@ a{
     align-items: center;
     gap: 1vw;
     font-size: 1.5vw;
+}
+
+.g-txt{
+    color: rgb(184, 179, 179);
+    font-size: 1.3vw;
+    margin: 2vh;
 }

@@ -15,27 +15,39 @@
         <div id="left"><a href="#">KhataBook</a>
         </div>
         <div id="right">
-            <span><a href="">Home</a></span>
-            <span><a href="">Create New Hisab </a></span>
+            <span><a href="/">Home</a></span>
+            <span><a href="/create">Create New Hisab </a></span>
         </div>
     </nav>
 
     <h3 class="mt-1">All Hisab Kitab</h3>
 
     <div id="hisabs">
-         
-          <div class="hisab">
-              <div class="left">
-                <a href="">
-                <span class="date">12-02-2024</span>
-                <span class="arrow"><i class="ri-arrow-right-circle-fill"></i></span>
-                </a>
-              </div>
-              <div class="right">
-                <a href=""><span><i class="ri-edit-line"></i></span></a>
-                <a href="#"><span><i class="ri-delete-bin-line"></i></span></a>
-              </div>
-          </div>
+          <% if(files.length > 0){ %>
+                 
+         <%   files.forEach((files)=>{ %>
+                  
+            <div class="hisab">
+                <div class="left">
+                  <a href="">
+                  <span class="date"><%=files%></span>
+                  <span class="arrow"><i class="ri-arrow-right-circle-fill"></i></span>
+                  </a>
+                </div>
+                <div class="right">
+                  <a href=""><span><i class="ri-edit-line"></i></span></a>
+                  <a href="#"><span><i class="ri-delete-bin-line"></i></span></a>
+                </div>
+            </div>
+
+         <%    }) %>
+
+         <% }else{ %>
+            
+              <h3 class="g-txt">Nothing to show....</h3>
+        <%    }
+         %>
+          
     </div>
 </body>
 </html>
