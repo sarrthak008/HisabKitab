@@ -155,3 +155,112 @@ a{
     width: 40vw;
     background-color: rgb(73, 70, 70);
 }
+
+
+@media screen and (max-width:480px) {
+    
+ 
+
+nav #left{
+     font-size: 4vw;
+}
+
+nav #right{
+    
+    gap:4vw;
+    font-size: 3.7vw;
+    
+}
+
+
+
+.mt-1{
+    margin: 4vh;
+    font-size: 3.8vw;
+}
+
+#hisabs{
+ margin-left: 2vw;
+}
+
+.hisab{
+    height: 6vh;
+    width: 70vw;
+    display: flex;
+    font-size: 5vw;
+    border-radius: 4px;
+    padding: 0 1vw;
+    align-items: center;
+    margin-top: 4vh;
+    justify-content: space-between;
+    background-color: rgb(81, 81, 234);
+}
+
+.right{
+    
+    gap: 7vw;
+    font-size: 4.5vw;
+}
+
+.left{
+    
+    gap: 3vw;
+    font-size: 4.5vw;
+}
+
+
+#container{
+    margin-top: 5vh;
+      width: 70vw;
+      margin-left: 2vw;
+   }
+   
+   #container h3{
+    
+       font-size: 4.5vw;
+       
+   }
+
+   .info{
+       padding:3vw;
+       font-size: 4.3vw;
+       margin-top: 5vh;
+       width: 70vw;
+   }
+
+ 
+.g-txt{
+    color: rgb(184, 179, 179);
+    font-size: 1.3vw;
+    margin: 2vh;
+}
+
+.c_form{
+    margin-top: 5vh;
+    width: 70vw; 
+    margin-left: 3vw;
+    gap: 5vh;
+}
+
+.c_form input{
+    height: 5vh;
+    width: 70vw; 
+    font-size: 3.2vw;
+    padding: 0 2vw;
+}
+
+.c_form textarea{
+    height: 30vh;
+    width: 70vw;
+    font-size: 3.2vw;
+    padding: 0 2vw;
+}
+
+.submit-btn{
+    height: 5.5vh;
+    width: 30vw;
+    font-size: 3.5vw;
+}
+
+
+}
