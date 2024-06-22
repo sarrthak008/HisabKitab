@@ -38,7 +38,7 @@ app.post('/createhisab',(req,res)=>{
      const filenName = GetFileName();
      let { tittle , content} = req.body;
 
-     fs.writeFile(`./hisabs/${tittle}.txt`,`${content}`,(err)=>{
+     fs.writeFile(`./hisabs/${filenName}.txt`,`${content}`,(err)=>{
          if(err){
             res.send(err);
          }else{
@@ -49,6 +49,29 @@ app.post('/createhisab',(req,res)=>{
 })
 
 
+app.get('/delete/:filename',(req,res)=>{
+    
+     fs.unlink(`./hisabs/${req.params.filename}`,(err)=>{
+        if(err){
+            res.send(err);
+        }else{
+            res.redirect('/')
+        }
+     })
+})
+
+app.get('/showhisab/:fileName',(req,res)=>{
+    let fileName = req.params.fileName;
+    fs.readFile(`./hisabs/${fileName}`,"utf-8",(err,data)=>{
+          if(err){
+            res.send(err);
+          }else{
+            res.render("hisab",{data,fileName});
+            console.log(data);
+          }
+    })
+     
+})
 
  app.listen(PORT,()=>{
      console.log(`app listem on ${PORT}`);

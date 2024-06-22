@@ -29,14 +29,14 @@
                   
             <div class="hisab">
                 <div class="left">
-                  <a href="">
-                  <span class="date"><%=files%></span>
+                  <a href="/showhisab/<%=files%>">
+                  <span class="date"><%=files.split(".")[0]%></span>
                   <span class="arrow"><i class="ri-arrow-right-circle-fill"></i></span>
                   </a>
                 </div>
                 <div class="right">
                   <a href=""><span><i class="ri-edit-line"></i></span></a>
-                  <a href="#"><span><i class="ri-delete-bin-line"></i></span></a>
+                  <a href="/delete/<%= files %>"><span><i class="ri-delete-bin-line"></i></span></a>
                 </div>
             </div>
 
