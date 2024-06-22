@@ -15,6 +15,7 @@ body{
     width: 100%;
     background-color: #1f1f1f;
     color: whitesmoke;
+    overflow-x: hidden;
 }
 
 nav{
@@ -55,7 +56,7 @@ a{
 
 .hisab{
     height: 6vh;
-    width: 20vw;
+    width: 25vw;
     display: flex;
     font-size: 1.2vw;
     border-radius: 4px;
@@ -147,9 +148,10 @@ a{
     color: #5151ea;
 }
 .info{
+    border-radius: 9px;
     padding:1vw;
     font-size: 1.3vw;
     margin-top: 5vh;
     width: 40vw;
-    background-color: rgb(39, 38, 38);
+    background-color: rgb(73, 70, 70);
 }

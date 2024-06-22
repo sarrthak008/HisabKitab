@@ -1,4 +1,0 @@
-tea powder =10
-sugar =10,
-fruits =200
-total 220

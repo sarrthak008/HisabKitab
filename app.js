@@ -40,9 +40,7 @@ app.post('/createhisab',(req,res)=>{
      let fileName = GetFileName();
      let { tittle , content} = req.body;      
 
-     
-
-     fs.writeFile(`./hisabs/${fileName}.txt`,`${content}`,(err)=>{
+     fs.writeFile(`./hisabs/${tittle}.txt`,`${content}`,(err)=>{
          if(err){
             res.send(err);
          }else{
@@ -75,9 +73,35 @@ app.get('/showhisab/:fileName',(req,res)=>{
     })
 })
 
-app.get('/edit/:fileName',(_req,res)=>{
-     res.render("edit")
+app.get('/edit/:fileName',(req,res)=>{
+ 
+    let fileName = req.params.fileName;
+
+     fs.readFile(`./hisabs/${fileName}`,"utf-8",(err,data)=>{
+         if(err){
+            res.status(500).send(err)
+         }else{
+             res.render("edit",{data,fileName})
+         }
+     })
 })
+
+
+app.post('/update/:fileName',(req,res)=>{
+      let fileName = req.params.fileName;
+      let newContent = req.body
+      //console.log(newContent)
+fs.writeFile(`./hisabs/${fileName}`,`${newContent.content}`,(err)=>{
+     if(err){
+         res.send(err)
+     }else{
+        res.redirect('/')
+     }
+}) 
+    
+})
+
+
 
  app.listen(PORT,()=>{
      console.log(`app listem on ${PORT}`);

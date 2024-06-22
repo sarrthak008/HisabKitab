@@ -21,9 +21,9 @@
         </div>
     </nav>
    
-    <form action="/" class="c_form" method="post">
+    <form action="/update/<%= fileName %>" class="c_form" method="post">
          <h2>Edit your hisab..</h2>
-         <textarea name="content" placeholder="enter your all hisab here"></textarea>
+         <textarea name="content" placeholder="enter your all hisab here"><%= data %></textarea>
          <button type="submit" class="submit-btn">Re-submit</button>
     </form>
 
