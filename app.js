@@ -23,20 +23,31 @@ app.use(express.static(path.join(__dirname,"public")))
  })
 
  app.get('/create',(req,res)=>{
-         const  GetFileName=()=>{
-            const date = new Date();
-            let year = date.getFullYear()
-            let  month = date.getMonth()
-            let day = date.getDate()
-           return(`${year}-${month+1}-${day}`);
-         }
-    let Filename = GetFileName();
-    fs.writeFile(`./hisabs/${Filename}.txt`,"hiiii",(err)=>{
-         if(err)res.send(err)
-         else res.send("done")
-
-    })
+       res.render('create')
  })
+
+app.post('/createhisab',(req,res)=>{
+
+    const  GetFileName=()=>{
+        const date = new Date();
+        let year = date.getFullYear()
+        let  month = date.getMonth()
+        let day = date.getDate()
+       return(`${year}-${month+1}-${day}`);
+     }
+     const filenName = GetFileName();
+     let { tittle , content} = req.body;
+
+     fs.writeFile(`./hisabs/${tittle}.txt`,`${content}`,(err)=>{
+         if(err){
+            res.send(err);
+         }else{
+            res.redirect('/')
+         }
+     })
+
+})
+
 
 
  app.listen(PORT,()=>{
